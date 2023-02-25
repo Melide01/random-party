@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 Melide's Random Party 🎉</title>
+  <style>
+    .video-container {
+			width: 320px;
+			margin: 0 auto;
+			background-color: #474747;
+			color: white;
+			font-size: 16px;
+			line-height: 1.5;
+			padding: 16px;
+		}
+		
+		.video-container video {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		
+		.video-container h1 {
+			margin-top: 0;
+			font-size: 24px;
+		}
+		
+		.video-container p {
+			margin: 0;
+		}
+    /* Global styles */
+    body {
+      font-family: Open Sans, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Header styles */
+    header {
+      background-image: url('stars.gif');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      height: 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Parallax effect */
+    header:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,.5);
+      z-index: -1;
+    }
+
+    header:after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('background.gif');
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
+      z-index: -20;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎉 Melide's Random Party 🎉</h1>
+  </header>
+  <main>
+    <section id="video">
+      <h2 id='NumbPage'></h2>
+      <p id= 'NumbDesc'></p>
+      
+      
+      <div class="video-container">
+		
+		
+          <video controls>
+            
+			<source id="my-video" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<p id="Description"></p>
+	</div>
+      
+      
+      
+    <script>
+        
+        const videos = [
+      {video: 'project ghost.mov', numb: 'N°6', desc: 'un ancien jeu que je voulais faire en 2021'},
+      {video: 'project rewind.mov', numb: 'N°7', desc: 'un prototype dun jeu que je voulais developper qui consiste à voyager dans le temps'},
+      {video: 'corrupted style1.mov', numb: 'N°8', desc: 'prototype de jeu'},
+      {video: 'corrupted style.mov', numb: 'N°9', desc: 'prototype de jeu'},
+      {video: 'terrorize me footage.mov', numb: 'N°10', desc: 'prototype de jeu'},
+      {video: '8bit instru.mov', numb: 'N°11', desc: 'instru de jeu'},
+      {video: 'un monstre à paris', numb: 'N°12', desc: 'instru de ma cover dun monstre à Paris'},
+      {video: 'oh yeah baby.mov', numb: 'N°13', desc: '???'},
+      {video: 'danganronpa but its calm.mov', numb: 'N°14', desc: 'avoue cest du miel aux oreilles'},
+      {video: 'fangan intro.mov', numb: 'N°15', desc: 'intro du fangan'},
+      {video: 'cursed danganronpa.mov', numb: 'N°16', desc: '???'},
+      {video: 'tiktok template.mov', numb: 'N°17', desc: 'un modèle tiktok en mode sad puis joyeux'},
+      {video: 'ubur ubur.mov', numb: 'N°18', desc: 'tas la ref?'},
+      {video: 'less go.mov', numb: 'N°19', desc: 'lets groove'},
+      {video: 'hehe boi.mov', numb: 'N°20', desc: '???'},
+      {video: 'miroir.mov', numb: 'N°21', desc: 'musique composé pour loeuvre de milk'},
+      {video: 'teaser art swipe.mov', numb: 'N°22', desc: 'prototype dintro pour une emission qui consiste à changer son domaine dart (par exemplem: un déssinateur compose une musique)'},
+      {video: 'sun zee.mov', numb: 'N°23', desc: 'got them'},
+      {video: 'demo epic soiree sur minecraft.mov', numb: 'N°24', desc: 'écoutes jusquà la fin'},
+      {video: 'fangan footage2.mov', numb: 'N°25', desc: 'prototype de jeu'},
+      {video: 'fangan footage1.mov', numb: 'N°26', desc: 'prototype de jeu'},
+      {video: 'last time in the night.mov', numb: 'N°27', desc: 'demo de musique bien emo'},
+      {video: 'pub cringe.mov', numb: 'N°28', desc: 'à mettre sur tiktok'},
+      {video: 'ptn c de la house cringe.mov', numb: 'N°29', desc: 'jsuis pas fier de celle là'},
+      {video: 'paimon.mov', numb: 'N°30', desc: 'mélodieux'},
+      {video: 'teaser je ne reve plus.mov', numb: 'N°31', desc: 'écoutez svp'},
+      {video: 'project tarot pokemon yugioh cque tu veux avec des cartes là.mov', numb: 'N°32', desc: 'jai abandonner cetait trop de boulot'},
+      {video: 'ramène moi clip.mov', numb: 'N°33', desc: 'avoue cest trop bien'},
+      {video: 'fuck music industry.mov', numb: 'N°34', desc: 'payez moi spotify'},
+      {video: 'michou dédicace.mov', numb: 'N°35', desc: 'le sang!'},
+      {video: 'the coconut is a fruit.mov', numb: 'N°36', desc: 'LE coco pas LA coco'},
+      {video: 'acappellaaaaaaa.mov', numb: 'N°37', desc: 'c nul non?'},
+      {video: 'melide fait du reggae mtn.mov', numb: 'N°38', desc: 'cest cool?'},
+      {video: 'plant vs zombie mais c cringe.mov', numb: 'N°39', desc: 'plus jamais jv chanter en anglais enfaite'},
+      {video: '1h11 making of.mov', numb: 'N°40', desc: 'le sound design final est top jtrouve'},
+      {video: 'du thé avec ton café.mov', numb: 'N°41', desc: 'volontier'},
+      {video: 'tu me fais rougir.mov', numb: 'N°42', desc: 'demo musique'},
+      {video: 'ori deck wtfffff.mov', numb: 'N°43', desc: 'la tektonik tahitienne'},
+      {video: 'rien.mov', numb: 'N°44', desc: '...'},
+      {video: 'demo emo rock.mov', numb: 'N°45', desc: 'jcrois elle est top'},
+      {video: 'de paris à marseille.mov', numb: 'N°46', desc: 'jarrive Cachalot'},
+      {video: 'fausse crush.mov', numb: 'N°47', desc: 'jaurais du la finir'},
+      {video: 'beethoven veut ma mort.mov', numb: 'N°48', desc: 'dsl bibi'},
+      {video: 'clip commandant kamet0.mov', numb: 'N°49', desc: 'À LATTAQUE'},
+      {video: 'demo tout.mov', numb: 'N°50', desc: 'tout mais rien'},
+      {video: 'dont wanna be safe.mov', numb: 'N°51', desc: 'riri, fifi, loulouuu'},
+      {video: 'mon amie elle vole.mov', numb: 'N°52', desc: 'le jeu robl0x là'},
+      {video: 'sussy rapper.mov', numb: 'N°53', desc: 'faites comme si ct stylé'},
+      {video: 'sous les lumières de la luuuune.mov', numb: 'N°54', desc: 'jdevrais peut être la refaire'},
+      {video: 'cest geometry dash ou quoi.mov', numb: 'N°55', desc: 'ptn ca me manque de jouer à geometry dash sur ma tablette android bleu toute péter'},
+      {video: 'demo ABC, LEV.mov', numb: 'N°56', desc: 'elle est top un peu'},
+      {video: 'project terrorize me.mov', numb: 'N°57', desc: 'prototype de jeu'},
+      {video: 'les petits poissooons.mov', numb: 'N°58', desc: 'jveux que les troupes de larmée française la chante'},
+      {video: 'project w0 (lost).mov', numb: 'N°59', desc: 'prototype de jeu: jai simuler dla 3d'},
+      {video: 'ça pourrait plaire à milk.mov', numb: 'N°60', desc: 'milk si tu vois ça, screen et dm moi'},
+      {video: 'oulala ça swing.mov', numb: 'N°61', desc: 'oh le swingosse'},
+      {video: 'project d9.mov', numb: 'N°62', desc: 'prototype de jeu'},
+      {video: 'fangan footage0.mov', numb: 'N°63', desc: 'prototype de jeu'},
+      {video: 'intro video idv.mov', numb: 'N°64', desc: 'jaurais pu en faire une video ytb'},
+      {video: 'project aveugle.mov', numb: 'N°65', desc: 'prototype de jeu'},
+      {video: 'project z.mov', numb: 'N°66', desc: 'prototype de jeu de zombie'},
+      {video: 'jsp filmer mdrr.mp4', numb: 'N°67', desc: 'date avec cachalot'},
+      {video: 'futur mangaka animateur.mp4', numb: 'N°68', desc: 'aie crainte Hajime Isayama'},
+      {video: 'teaser feat potentiel.mov', numb: 'N°69', desc: 'personne nest prêt'},
+      {video: 'danganronpa ded.mp4', numb: 'N°70', desc: 'prototype de jeu'},
+      {video: 'project t.mp4', numb: 'N°71', desc: 'prototype de jeu'},
+      {video: 'aishite.mov', numb: 'N°72', desc: 'demo Daisuki desu'},
+      {video: 'mec mais cest toi.mp4', numb: 'N°73', desc: 'oui c moi lolo'},
+      {video: 'échafaudage loop 30fps.mp4', numb: 'N°74', desc: 'prototype de jeu'},
+      {video: 'melide n2.mp4', numb: 'N°75', desc: 'faites pas gaffe à melide n°2'},
+      {video: 'miroir scene.mp4', numb: 'N°76', desc: 'insane ton oeuvre milk'}
+          ]
+                        
+                        
+                        
+                        
+        
+		
+
+		const randomIndex = Math.floor(Math.random() * videos.length);
+        const selectedVideo = videos[randomIndex];
+		const videoSrc = 'videos/' + selectedVideo.video;
+        
+		document.getElementById('my-video').setAttribute('src', videoSrc);
+        
+        
+        document.getElementById("NumbPage").innerHTML = selectedVideo.numb;
+        document.getElementById("NumbDesc").innerHTML = selectedVideo.desc;
+	</script>
+    
+      
+      
+      
+      
+      
+      
+      
+    <center><button id="randomBtn" style="width:200px;height:30px;">Changer de page</button></center>
+    <script>
+		var htmlFiles = ["randomaudios.html", 
+                         "randomvideos.html", 
+                         "randomimages.html", 
+                         "randomspotify.html",
+                         "randomsoundcloud.html"]; // list of HTML files
+      
+        var htmlRare = ["random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "omg-ultra-rare.html"]; //list of rare HTML files
+		var randomBtn = document.getElementById("randomBtn"); // get the button element by ID
+		var percentage = 95 // set the percentage here
+		randomBtn.addEventListener("click", function() {
+			var randomNumber = Math.random() * 100; // generate random number between 0 and 100
+			if (randomNumber < percentage) { // check if the random number is less than the percentage
+				var randomIndex = Math.floor(Math.random() * htmlFiles.length); // generate random index
+				var randomFile = htmlFiles[randomIndex]; // get random HTML file
+				window.location.href = randomFile; // redirect to random HTML file
+			} else {
+				// do something else, such as displaying a message or redirecting to a specific page
+              var randomIndex = Math.floor(Math.random() * htmlRare.length); // generate random index
+				var randomFile = htmlRare[randomIndex]; // get random HTML file
+				window.location.href = randomFile; // redirect to random HTML file
+			}
+		});
+	</script>
+    <br><br><br><br>
+    
+    
+    
+    <section id="contact">
+      <h2>Contact Me (ça sert à r mais c'est stylé)</h2>
+      <form action="submit-form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <input type="submit" value="Send">
+      </form>
+    </section>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Melide ( en vrai c'est pas copyright mais c'est juste pour faire stylée )</p>
+  </footer>
+</body>
+</html>

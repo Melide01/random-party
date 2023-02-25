@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 Melide's Random Party 🎉</title>
+  <style>
+    /* Global styles */
+    body {
+      font-family: Open Sans, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Header styles */
+    header {
+      background-image: url('stars.gif');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      height: 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Parallax effect */
+    header:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,.5);
+      z-index: -1;
+    }
+
+    header:after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('background.gif');
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
+      z-index: -20;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎉 Melide's Random Party 🎉</h1>
+  </header>
+  <main>
+    
+    
+    
+    
+    <section id="image">
+      <h2 id='NumbPage'></h2>
+      <p id= 'NumbDesc'></p>
+      
+      <center><img id='play-image'
+               controls 
+               style="width:500px;height:500px;" 
+                   class="centerImage"
+                   alt="Cliques pour écoutere"></center>
+
+    
+    <br><br>
+    </section>
+      
+      
+    <script>
+		const images = [
+  {image: 'logo style new olympia.png', numb: 'N°77', desc: 'un jeu que javais developper a lepooook'},
+  {image: 'milk et moi.png', numb: 'N°78', desc: 'sur identity v avec Milk, jouez à identity v'},
+  {image: 'jvoulais streamer.png', numb: 'N°79', desc: 'jvoulais streamer avec ce nouveau logo'},
+  {image: 'collab.png', numb: 'N°80', desc: 'un dessin cool que g fait'},
+  {image: 'fangan5.png', numb: 'N°81', desc: 'projet fangan (annulé)'},
+  {image: 'fangan4.png', numb: 'N°82', desc: 'projet fangan (annulé)'},
+  {image: 'fangan3.png', numb: 'N°83', desc: 'projet fangan (annulé)'},
+  {image: 'fangan2.png', numb: 'N°84', desc: 'projet fangan (annulé)'},
+  {image: 'fangan1.png', numb: 'N°85', desc: 'projet fangan (annulé)'},
+  {image: 'envie de changer.png', numb: 'N°86', desc: 'jvoulais changer de DA mais finalement jaimais pas'},
+  {image: 'spotify.png', numb: 'N°87', desc: 'trop fier davoir ete approved sur spotify <33'},
+  {image: 'jai pu de place.png', numb: 'N°88', desc: 'vrm les iPads de 32Go ca pue'},
+  {image: 'fangan.png', numb: 'N°89', desc: 'projet fangan (annulé)'},
+  {image: 'breathing trees0.jpg', numb: 'N°90', desc: 'un projet de jeu écolos'},
+  {image: 'breathing trees1.jpg', numb: 'N°91', desc: 'un projet de jeu écolos'},
+  {image: 'breathing trees2.jpg', numb: 'N°92', desc: 'un projet de jeu écolos'},
+  {image: 'breathing trees3.jpg', numb: 'N°93', desc: 'un projet de jeu écolos'},
+  {image: 'meme1.png', numb: 'N°94', desc: '???'},
+  {image: 'chat.png', numb: 'N°95', desc: 'Tracyyyyy'},
+  {image: 'bienvenue.png', numb: 'N°96', desc: 'Ça va vous tenez? screen et envoie en dm<333'},
+  {image: 'gecko.png', numb: 'N°97', desc: 'kiki le gecko'},
+  {image: 'random2.png', numb: 'N°98', desc: '<33'},
+  {image: 'random1.png', numb: 'N°99', desc: '<33'},
+  {image: 'bébé melide.png', numb: 'N°100', desc: 'trop pipou bébé melide'},
+  {image: 'meme0.png', numb: 'N°101', desc: '???'},
+  {image: 'project vêtement.png', numb: 'N°102', desc: 'jvoulais faire une marque de vetement mais flemme'},
+  {image: 'project site web.png', numb: 'N°103', desc: 'jsavais pas comment mettre en ligne mon site web sans trop payer ;-;'},
+  {image: 'Lorange title.png', numb: 'N°104', desc: 'ma potentiel marque de muzik'},
+  {image: 'crescent cafe1.png', numb: 'N°105', desc: 'le melide dans un anime'},
+  {image: 'crescent cafe.png', numb: 'N°106', desc: 'le melide boit du cafe dans un anime'},
+  {image: 'jamais deux sans toi.png', numb: 'N°107', desc: 'la main de jamais deux sans toi'},
+  {image: 'pour les idiots.png', numb: 'N°108', desc: 'pour la commu didiots de locklear <3333'},
+  {image: 'project tarot.png', numb: 'N°109', desc: 'jai abandonner ce projet, demande bcp trop de travail'},
+  {image: 'terrorize me title.png', numb: 'N°110', desc: 'titre dune saga que je voulais creer'},
+  {image: 'chao pao.png', numb: 'N°111', desc: 'le snack preferée du melide'},
+  {image: 'MeirS.png', numb: 'N°112', desc: 'belle découverte'},
+  {image: 'mauve thanks.png', numb: 'N°113', desc: 'jaurais du refaire un remake'},
+  {image: 'je veux pas te perdre.png', numb: 'N°114', desc: 'peut être que le clip sortiras jamais dsl'},
+  {image: 'project kill.png', numb: 'N°115', desc: 'une idée de jeux vidéo abandonné car trop sanglante et immorale'},
+  {image: 'stats1.png', numb: 'N°116', desc: 'stonk'},
+  {image: 'random0.png', numb: 'N°117', desc: 'ma-ko?'},
+  {image: 'teaser3.png', numb: 'N°118', desc: 'Est-elle superieur a toute'},
+  {image: 'freesound.png', numb: 'N°119', desc: 'jv chercher des samples gratuit dessus'},
+  {image: '3d modeling.png', numb: 'N°120', desc: 'jvoulais faire un mod minecraft'},
+  {image: 'teaser1.png', numb: 'N°121', desc: 'cover dun futur son avec denji'},
+  {image: 'teaser0.png', numb: 'N°122', desc: 'préparation dune cover avec milk'},
+  {image: 'kinder country.png', numb: 'N°123', desc: 'Kinder Country'},
+  {image: 'kinder maxi.png', numb: 'N°124', desc: 'Kinder Maxi'},
+  {image: 'stats.png', numb: 'N°125', desc: 'les vrais stats'},
+  {image: 'easter egg.png', numb: 'N°126', desc: 'mew meow miaou'},
+  {image: 'they left us.jpg', numb: 'N°127', desc: 'Anciens projets de jeux video'},
+  {image: 'tm0.jpg', numb: 'N°128', desc: 'Anciens projets de jeux video'},
+          ]
+
+		    
+			const randomIndex = Math.floor(Math.random() * images.length);
+            const selectedImage = images[randomIndex]
+			
+            const imageSrc = 'images/' + selectedImage.image;
+			
+            document.getElementById('play-image').setAttribute('src', imageSrc);
+            document.getElementById("NumbPage").innerHTML = selectedImage.numb;
+            document.getElementById("NumbDesc").innerHTML = selectedImage.desc;
+		
+      
+      
+      
+      
+
+		
+		
+		
+	</script>
+    
+      
+      
+      
+      
+      
+      
+      
+    <center><button id="randomBtn" style="width:200px;height:30px;">Changer de page</button></center>
+    <script>
+		var htmlFiles = ["randomaudios.html", 
+                         "randomvideos.html", 
+                         "randomimages.html", 
+                         "randomspotify.html",
+                         "randomsoundcloud.html"]; // list of HTML files
+      
+        var htmlRare = ["random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "omg-ultra-rare.html"]; //list of rare HTML files
+		var randomBtn = document.getElementById("randomBtn"); // get the button element by ID
+		var percentage = 95 // set the percentage here
+		randomBtn.addEventListener("click", function() {
+			var randomNumber = Math.random() * 100; // generate random number between 0 and 100
+			if (randomNumber < percentage) { // check if the random number is less than the percentage
+				var randomIndex = Math.floor(Math.random() * htmlFiles.length); // generate random index
+				var randomFile = htmlFiles[randomIndex]; // get random HTML file
+				window.location.href = randomFile; // redirect to random HTML file
+			} else {
+				// do something else, such as displaying a message or redirecting to a specific page
+              var randomIndex = Math.floor(Math.random() * htmlRare.length); // generate random index
+				var randomFile = htmlRare[randomIndex]; // get random HTML file
+				window.location.href = randomFile; // redirect to random HTML file
+			}
+		});
+	</script>
+    <br><br><br><br>
+    
+    
+    
+    <section id="contact">
+      <h2>Contact Me (ça sert à r mais c'est stylé)</h2>
+      <form action="submit-form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <input type="submit" value="Send">
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Melide ( en vrai c'est pas copyright mais c'est juste pour faire stylée )</p>
+  </footer>
+</body>
+</html>

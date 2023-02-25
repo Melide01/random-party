@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 Melide's Random Party 🎉</title>
+  <style>
+    /* Global styles */
+    body {
+      font-family: Open Sans, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Header styles */
+    header {
+      background-image: url('stars.gif');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      height: 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Parallax effect */
+    header:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,.5);
+      z-index: -1;
+    }
+
+    header:after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('background.gif');
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
+      z-index: -20;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎉 Melide's Random Party 🎉</h1>
+  </header>
+  <main>
+    
+    
+    
+    
+    <section id="audio">
+      <h2 id='NumbPage'></h2>
+      <p id= 'NumbDesc'></p>
+      
+      
+      <center><div id="Soundcloud-Widget"></div></center>
+      
+      
+    <br><br>
+    </section>
+      
+      
+    <script>
+		
+                      
+      
+        
+          const tracks = [
+        {
+          url: "https://soundcloud.com/jvouslayyyy/sad-a-buppa",
+          numb: "N°181",
+          desc: "«のعꋊjأ ѵօυѕ ѕʅΛყყ - Sad à Buppa :( (Younbeats)» celle ci superieur à tout>>>>"
+        },
+        {
+          url: "https://soundcloud.com/jvouslayyyy/jai-tro-la-rage-sah-0-shmog",
+          numb: "N°182",
+          desc: "«のعꋊjأ ѵօυѕ ѕʅΛყყ - j'ai tro la rage sah 凸(｀0´)凸 (Shmog)» le dernier son du frérot t trop fort"
+        },
+        {
+          url: "https://soundcloud.com/jvouslayyyy/princesse-de-mes-nuits-3",
+          numb: "N°183",
+          desc: "«のعꋊjأ ѵօυѕ ѕʅΛყყ - Princesse de mes nuits <\3» une que je trouve jolie"
+        },
+        {
+          url: "https://soundcloud.com/user-341753809/belledelphinerollie",
+          numb: "N°184",
+          desc: "«@rudynosaure - Belle Delphine (Rollie)» ce rudy bien + sexy que Belle Delphine"
+        },
+        {
+          url: "https://soundcloud.com/user-341753809/pardonne-moi-ft-mp404-ermashov",
+          numb: "N°185",
+          desc: "«@rudynosaure - Pardonne Moi (ft MP404) (ERMASHOV)» ça me donne des frissons"
+        },
+        {
+          url: "https://soundcloud.com/user-796783071/visite-prod-jmxsbeatz",
+          numb: "N°186",
+          desc: "«DICTIO (nEiled IT!)  - visite (prod. jmxsbeatz)» en train de l'écouter ptn qu'elle est belle"
+        },
+        {
+          url: "https://soundcloud.com/gometzvie/gometzvie-full-party-lrsk-feno",
+          numb: "N°187",
+          desc: "«GOMETZVIE - FULL PARTY (Lrsk&Feno)» jsavais pas que les frérots posaient sur du rock"
+        },
+        {
+          url: "https://soundcloud.com/gometzvie/gometzvie-lendemain",
+          numb: "N°188",
+          desc: "«GOMETZVIE - Lendemain (Melty,Lrsk&Feno)» la première que j'ai découvert des frérots"
+        },
+        {
+          url: "https://soundcloud.com/loca-negra/grosse_bitches3",
+          numb: "N°189",
+          desc: "«Loca Negra - ME DEMANDE PAS SI ÇA VA (Prod. Yesok)» elle est si particulière celle là"
+        },
+                {
+          url: "https://soundcloud.com/loca-negra/d3rniermess4ge",
+          numb: "N°190",
+          desc: "«Loca Negra - DERNI3R MESS4GE (Prod. Loca Negra)» elle comble vrm beaucoup trop ma vie"
+        },
+        // Add more tracks as needed
+      ];
+      
+        
+        
+      
+      const randomIndex = Math.floor(Math.random() * tracks.length);
+      const selectedTrack = tracks[randomIndex];
+      
+      
+      
+      
+      
+      var widgetHtml = '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=' + selectedTrack.url + '&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>';
+      
+      const spotifyPlayer = document.getElementById("spotify-player");
+      
+      document.getElementById("Soundcloud-Widget").innerHTML = widgetHtml;
+
+      document.getElementById("NumbPage").innerHTML = selectedTrack.numb;
+      document.getElementById("NumbDesc").innerHTML = selectedTrack.desc;
+		
+      
+      
+      
+      
+
+		
+		
+		
+	</script>
+    
+      
+      
+      
+      
+      
+      
+      
+    <center><button id="randomBtn" style="width:200px;height:30px;">Changer de page</button></center>
+    <script>
+		var htmlFiles = ["randomaudios.html", 
+                         "randomvideos.html", 
+                         "randomimages.html", 
+                         "randomspotify.html",
+                         "randomsoundcloud.html"]; // list of HTML files
+      
+        var htmlRare = ["random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "omg-ultra-rare.html"]; //list of rare HTML files
+		var randomBtn = document.getElementById("randomBtn"); // get the button element by ID
+		var percentage = 95 // set the percentage here
+		randomBtn.addEventListener("click", function() {
+			var randomNumber = Math.random() * 100; // generate random number between 0 and 100
+			if (randomNumber < percentage) { // check if the random number is less than the percentage
+				var randomIndex = Math.floor(Math.random() * htmlFiles.length); // generate random index
+				var randomFile = htmlFiles[randomIndex]; // get random HTML file
+				window.location.href = randomFile; // redirect to random HTML file
+			} else {
+				// do something else, such as displaying a message or redirecting to a specific page
+              var randomIndex = Math.floor(Math.random() * htmlRare.length); // generate random index
+				var randomFile = htmlRare[randomIndex]; // get random HTML file
+				window.location.href = randomFile; // redirect to random HTML file
+			}
+		});
+	</script>
+    <br><br><br><br>
+    
+    
+    
+    <section id="contact">
+      <h2>Contact Me (ça sert à r mais c'est stylé)</h2>
+      <form action="submit-form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <input type="submit" value="Send">
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Melide ( en vrai c'est pas copyright mais c'est juste pour faire stylée )</p>
+  </footer>
+</body>
+</html>

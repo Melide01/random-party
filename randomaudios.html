@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 Melide's Random Party 🎉</title>
+  <style>
+    /* Global styles */
+    body {
+      font-family: Open Sans, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Header styles */
+    header {
+      background-image: url('stars.gif');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      height: 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Parallax effect */
+    header:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,.5);
+      z-index: -1;
+    }
+
+    header:after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('background.gif');
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
+      z-index: -20;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎉 Melide's Random Party 🎉</h1>
+  </header>
+  <main>
+    
+    
+    
+    
+    <section id="audio">
+      <h2 id='NumbPage'></h2>
+      <p id= 'NumbDesc'></p>
+      
+      <center><img id='play-image'
+               controls 
+               style="width:300px;height:300px;" 
+                   class="centerImage"
+                   alt="Cliques pour écoutere"></center>
+
+    <center><audio id="my-audio" controls autoplay loop>
+		<source src="" type="audio/mpeg">
+	</audio></center>
+    <br><br>
+    </section>
+      
+      
+    <script>
+        const audios = [
+  {audio: 'note audio demo jabandonne.m4a', img: 'construit.gif', numb: 'N°129', desc: 'ptite demo pas propre'},
+  {audio: 'note audio what remain of us.m4a', img: 'construit.gif', numb: 'N°130', desc: 'ptite vibe last of us'},
+  {audio: 'note audio gaetare.m4a', img: 'construit.gif', numb: 'N°131', desc: 'ptite gaetare'},
+  {audio: 'note audio idée melodic cachalot.m4a', img: 'construit.gif', numb: 'N°132', desc: 'je cherchais des melo pour cachalot'},
+  {audio: 'note audio tsunamise mon cœur.m4a', img: 'construit.gif', numb: 'N°133', desc: 'demo de tsunamise mon coeur, une instru que je ne partagerais pas ^3^'},
+  {audio: 'note audio le melide test une micro.m4a', img: 'construit.gif', numb: 'N°134', desc: 'le melide teste une micro'},
+  {audio: 'note audio suicide.m4a', img: 'construit.gif', numb: 'N°135', desc: 'ptite reprise de suicide disponible sur mon insta'},
+  {audio: 'notes audio pistes fausses.m4a', img: 'construit.gif', numb: 'N°136', desc: 'jme souviens pas de celle là'},
+  {audio: 'no.m4a', img: 'construit.gif', numb: 'N°137', desc: 'dont wanna be messed up'},
+  {audio: 'i really do not miss you.m4a', img: 'construit.gif', numb: 'N°138', desc: 'petite sonnerie composé1'},
+  {audio: 'help me.m4a', img: 'construit.gif', numb: 'N°139', desc: 'petite sonnerie composé2'},
+  {audio: 'do not wake up.m4a', img: 'construit.gif', numb: 'N°140', desc: 'petite sonnerie composé3'},
+  {audio: 'garçon des îles - Asyl.wav', img: 'construit.gif', numb: 'N°141', desc: '«garçon des îles - Asyl» g voulu changer de pseudo mais du coup jsp si jla sort'},
+  {audio: 'FREE weird type beat .m4a', img: 'construit.gif', numb: 'N°142', desc: 'FREE weird type beat'},
+  {audio: 'FREE Bouche à bouche type beat.wav', img: 'construit.gif', numb: 'N°143', desc: 'FREE Bouche à bouche type beat'},
+  {audio: 'TMCG-lobby-Melide.mp3', img: 'construit.gif', numb: 'N°144', desc: 'musique composé pour le lobby de The Most Cancerous Game disponible sur Android, allez y jouer!'},
+  {audio: 'Demo Elle veut se tuer.m4a', img: 'construit.gif', numb: 'N°145', desc: 'jtrouve que c un peu moche quand meme'},
+  {audio: 'FREE Jemmerde ce monde.wav', img: 'construit.gif', numb: 'N°146', desc: 'FREE Jemmerde ce monde'},
+  {audio: 'PAS FREE Je ne taime pas.mp3', img: 'construit.gif', numb: 'N°147', desc: 'PAS FREE Je ne taimes pas'},
+  {audio: 'Melide - no time to live (cancelled).wav', img: 'construit.gif', numb: 'N°148', desc: 'Une musique que javais composé rapidos pour une gamejam mais jai oublier que jetais nul en programmation de jeux video'},
+  {audio: 'FREE Explain.wav', img: 'construit.gif', numb: 'N°149', desc: 'FREE Explain'},
+  {audio: 'FREE Smash me.wav', img: 'construit.gif', numb: 'N°150', desc: 'FREE Smash me + dm moi la ref si tu las'},
+  {audio: 'FREE Deux Cupcakes.wav', img: 'construit.gif', numb: 'N°151', desc: 'FREE Deux CupCakes'},
+  {audio: 'PAS FREE Take my coffee.wav', img: 'construit.gif', numb: 'N°152', desc: 'PAS FREE Take my coffee music anime un peu hehe'},
+  {audio: 'FREE Dessin animé (instru).wav', img: 'construit.gif', numb: 'N°153', desc: 'FREE Dessin animé (instru)'},
+  {audio: 'D4LY - Blizzard ( Melide Remix ).wav', img: 'construit.gif', numb: 'N°154', desc: 'D4LY - Blizzard ( Melide Remix )'},
+  {audio: 'garçon des îles - Ta maa maitai (cancelled).wav', img: 'construit.gif', numb: 'N°155', desc: '«garçon des îles - Ta maa maitai (cancelled)» abandonné car les paroles en tahitien nétais pas belle'},
+  {audio: 'FREE Tiens bon (instru).wav', img: 'construit.gif', numb: 'N°156', desc: 'FREE Tiens bon (instru lamour est dans le pré)'},
+  {audio: 'Melide - Le mal qui me suis (cancelled).wav', img: 'construit.gif', numb: 'N°157', desc: 'Melide - Le mal qui me suit (cancelled)'},
+  {audio: 'Melide - Jabandonne (cancelled).wav', img: 'construit.gif', numb: 'N°158', desc: 'Melide - Jabandonne (cancelled)'},
+  {audio: 'Melide - On oubliera (cancelled).wav', img: 'construit.gif', numb: 'N°159', desc: 'Melide - On oubliera (cancelled)'},
+  {audio: 'Melide - Asyl (cancelled).wav', img: 'construit.gif', numb: 'N°160', desc: 'Melide - Asyl (cancelled)'},
+  {audio: 'FREE Santé.wav', img: 'construit.gif', numb: 'N°161', desc: 'FREE Santé'},
+  {audio: 'Post Dramatic .m4a', img: 'construit.gif', numb: 'N°162', desc: 'instru de jeux vidéo denquête'},
+        ]
+
+		
+			const randomIndex = Math.floor(Math.random() * audios.length);
+            const selectedAudio = audios[randomIndex];
+			const audioSrc = 'audios/' + selectedAudio.audio;
+            const imageSrc = 'images/covers/' + selectedAudio.img;
+			document.getElementById('my-audio').setAttribute('src', audioSrc);
+			document.getElementById('my-audio').play();
+            document.getElementById('play-image').setAttribute('src', imageSrc);
+            document.getElementById("NumbPage").innerHTML = selectedAudio.numb;
+            document.getElementById("NumbDesc").innerHTML = selectedAudio.desc;
+		
+      
+      
+      
+      
+
+		
+		
+		
+	</script>
+    
+      
+      
+      
+      
+      
+      
+      
+    <center><button id="randomBtn" style="width:200px;height:30px;">Changer de page</button></center>
+    <script>
+		var htmlFiles = ["randomaudios.html", 
+                         "randomvideos.html", 
+                         "randomimages.html", 
+                         "randomspotify.html",
+                         "randomsoundcloud.html"]; // list of HTML files
+      
+        var htmlRare = ["random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "random-rare-videos.html",
+                        "omg-ultra-rare.html"]; //list of rare HTML files
+		var randomBtn = document.getElementById("randomBtn"); // get the button element by ID
+		var percentage = 95 // set the percentage here
+		randomBtn.addEventListener("click", function() {
+			var randomNumber = Math.random() * 100; // generate random number between 0 and 100
+			if (randomNumber < percentage) { // check if the random number is less than the percentage
+				var randomIndex = Math.floor(Math.random() * htmlFiles.length); // generate random index
+				var randomFile = htmlFiles[randomIndex]; // get random HTML file
+				window.location.href = randomFile; // redirect to random HTML file
+			} else {
+				// do something else, such as displaying a message or redirecting to a specific page
+              var randomIndex = Math.floor(Math.random() * htmlRare.length); // generate random index
+				var randomFile = htmlRare[randomIndex]; // get random HTML file
+				window.location.href = randomFile; // redirect to random HTML file
+			}
+		});
+	</script>
+    <br><br><br><br>
+    
+    
+    
+    <section id="contact">
+      <h2>Contact Me (ça sert à r mais c'est stylé)</h2>
+      <form action="submit-form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <input type="submit" value="Send">
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Melide ( en vrai c'est pas copyright mais c'est juste pour faire stylée )</p>
+  </footer>
+</body>
+</html>
